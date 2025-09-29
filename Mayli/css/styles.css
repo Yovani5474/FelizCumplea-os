@@ -1,0 +1,130 @@
+/* Tema dulce y festivo para Mayli */
+:root {
+  --bg-start: #fff0f7;
+  --bg-end: #ffe6ff;
+  --accent: #ff68b8;
+  --accent-2: #7f6bff;
+  --text: #2a2230;
+  --muted: #6f5f6a;
+  --card: #ffffffcc;
+  --shadow: 0 10px 30px rgba(255, 104, 184, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+#confetti-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.page {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 2rem;
+  padding: 4rem 1.25rem 3rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.hero {
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.name {
+  text-shadow: 0 8px 24px rgba(127, 107, 255, 0.35);
+}
+
+.subtitle {
+  margin: 0 auto 1.25rem;
+  max-width: 46ch;
+  color: var(--muted);
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+}
+
+.btn {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.9rem 1.3rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.btn:hover { transform: translateY(-1px); filter: brightness(1.05); }
+.btn:active { transform: translateY(0); filter: brightness(0.98); }
+
+.card {
+  background: var(--card);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 18px;
+  padding: 1.25rem 1.25rem 1rem;
+  box-shadow: var(--shadow);
+  line-height: 1.7;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+  justify-items: center;
+}
+
+.bubble {
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  border-radius: 16px;
+  background: #ffffffb3;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.bubble:hover {
+  transform: translateY(-4px) rotate(-3deg);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 640px) {
+  .gallery { grid-template-columns: repeat(3, 1fr); }
+}
+
+
